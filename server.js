@@ -54,11 +54,19 @@ app.route('/preferences')
   .get(async (req, res) => {
     try {
       const { user_id, category } = req.query;
-      const rows = await db.all(
-        `SELECT * FROM user_preferences 
-         WHERE user_id = ? AND category = ?`,
-        [user_id, category]
-      );
+      console.log(`Fetching preferences for user_id: ${user_id}, category: ${category}`);
+      
+      const rows = await new Promise((resolve, reject) => {
+        db.all(
+          `SELECT * FROM user_preferences 
+           WHERE user_id = ? AND category = ?`,
+          [user_id, category],
+          (err, rows) => {
+            if (err) reject(err);
+            else resolve(rows);
+          }
+        );
+      });
       
       const result = rows.map(row => ({
         ...row,
