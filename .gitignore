@@ -15,3 +15,22 @@
 .DS_Store
 # Ignore build artifacts
 /build
+# Ignore package lock files
+/package-lock.json
+# Ignore yarn lock files
+/yarn.lock
+# Ignore npm debug log files
+/npm-debug.log
+# Ignore test output
+/test-output
+# Ignore local configuration files
+/.local
+# Ignore backup files
+*.bak
+# Ignore cache files
+/cache
+# Ignore compiled files
+/*.o
+# Ignore documentation files
+/docs
+# Ignore specific IDE configurations
