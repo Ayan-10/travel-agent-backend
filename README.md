@@ -196,3 +196,26 @@ Header: X-API-Key your_secret_key_here
 }
 
 ```
+
+
+## 🔧 Setup Instructions
+#### 1. Clone the Repo
+```
+git clone https://github.com/yourusername/travel-agent-backend.git
+cd travel-agent-backend
+```
+#### 2. Install Dependencies
+```
+npm install
+```
+#### 3. Setup Environment Variables
+Create a .env file:
+```env
+API_KEY=your_secret_key_here
+```
+#### 4. Start the Server
+```
+node server.js
+```
+Server will start at http://localhost:3000.
+
